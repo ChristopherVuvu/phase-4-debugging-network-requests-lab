@@ -62,12 +62,29 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: 
+Add a new toy when the toy form is submitted:
+
+Check the network request: Inspect the network request made when submitting the toy form in the browser's developer tools. Ensure that the request is being sent to the correct API endpoint (POST /toys) and that the request payload includes the necessary data for creating a new toy.
+
+Check the Rails server logs: In the terminal where the Rails server is running, observe the server logs when submitting the toy form. Look for any error messages or exceptions related to the create action in the ToysController. Verify that the server receives the request and attempts to create a new toy.
+
+Verify controller code: Examine the ToysController (app/controllers/toys_controller.rb) and ensure that the create action is defined correctly. Confirm that the strong parameters permit the required attributes for creating a toy (name, image, likes). Check if there are any missing or incorrect logic related to creating a new toy.
+
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: Check the network request: Inspect the network request made when updating the number of likes for a toy. Verify that the request is being sent to the correct API endpoint (PATCH /toys/:id) and that the request payload includes the updated likes value.
+
+Check the Rails server logs: Observe the server logs when updating the likes for a toy. Look for any error messages or exceptions related to the update action in the ToysController. Ensure that the server receives the request and attempts to update the likes value for the specified toy.
+
+Verify controller code: Examine the ToysController and specifically the update action. Confirm that the action is defined correctly and includes the necessary logic for updating the likes value. Check if there are any issues with the strong parameters, finding the toy by ID, or updating the likes attribute
+
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: Check the network request: Inspect the network request made when donating a toy to Goodwill. Verify that the request is being sent to the correct API endpoint (DELETE /toys/:id) with the ID of the toy to be deleted.
+
+Check the Rails server logs: Observe the server logs when deleting a toy. Look for any error messages or exceptions related to the destroy action in the ToysController. Ensure that the server receives the request and attempts to delete the specified toy from the database.
+
+Verify controller code: Examine the ToysController and the destroy action. Confirm that the action is defined correctly and includes the necessary logic for finding and deleting the toy. Check if there are any issues with finding the toy by ID or deleting it from the database.
